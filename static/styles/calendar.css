@@ -1,13 +1,7 @@
 .content{
-   height: 100%;
 }
 
 .wrapper{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-
-   height: 100%;
    width: 100%;
 
    padding: 20px var(--content-padding) 20px var(--content-padding);
@@ -15,19 +9,21 @@
 
 .calendar{
    width: 60%;
-
-   padding: 10px;
-
-   background-color: var(--light-background-color);
-
-   border-radius: var(--border-radius);
-   box-shadow: var(--box-shadow);
 }
 
 .announcements{
    width: 40%;
 
    padding: 10px;
+}
+
+#calendar{
+   padding: 10px;
+
+   background-color: var(--light-background-color);
+
+   border-radius: var(--border-radius);
+   box-shadow: var(--box-shadow);
 }
 
 .calendar .fc .fc-daygrid-day.fc-day-today{
