@@ -7,7 +7,13 @@
 }
 
 .post .post-body{
-   padding: 10px var(--content-padding) 10px var(--content-padding);
+   margin: 10px var(--content-padding) 10px var(--content-padding);
+   padding: 10px;
+
+   background-color: var(--light-background-color);
+
+   border-radius: var(--border-radius);
+   box-shadow: var(--box-shadow);
 
    text-align: justify;
 }

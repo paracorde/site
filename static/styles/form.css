@@ -1,7 +1,10 @@
 .form{
-   width: 100%;
+   margin: 10px calc(var(--content-padding) - 10px) 10px calc(var(--content-padding) - 10px);
+   padding: 20px;
 
-   padding: 20px var(--content-padding) 10px var(--content-padding);
+   background-color: var(--light-background-color);
+
+   border-radius: var(--border-radius);
 }
 
 .form input[type=text], .form input[type=password], .form textarea{

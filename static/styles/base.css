@@ -15,8 +15,9 @@
    --on-accent-color: var(--background-color);
 
    --shadow-hue: 200;
-   --shadow-color: hsla(var(--shadow-hue), 15%, 10%, 20%);
+   --shadow-color: hsla(var(--shadow-hue), 65%, 20%, 5%);
    --box-shadow: 0 2px 6px var(--shadow-color);
+   --box-shadow-up: 0 -2px 6px var(--shadow-color);
 
    --border-color: var(--darkened-background-color);
    --border-property: 3px solid;
@@ -25,7 +26,7 @@
    --padding: 10px;
    --content-padding: 15%;
 
-   --transition: 0.25s ease;
+   --transition: 0.1s ease;
 }
 
 *{
@@ -36,7 +37,7 @@ body{
    margin: 0;
 
    color: var(--text-color);
-   background-color: var(--background-color);
+   background-color: var(--shaded-background-color);
 
    font-family: 'Inter';
    font-size: 0.9em;
@@ -63,6 +64,8 @@ a:hover, a:focus{
    color: var(--darkened-accent-color);
 
    text-decoration: underline;
+
+   transition: var(--transition);
 }
 
 .text-input{
@@ -113,6 +116,8 @@ blockquote{
    margin-left: 0;
    padding: 4px 4px 4px 10px;
 
+   background-color: var(--shaded-background-color);
+
    border-left: var(--border-property) var(--accent-color);
 }
 
@@ -130,7 +135,7 @@ blockquote p:last-child{
    align-items: baseline;
    width: 100%;
 
-   padding: 10px var(--content-padding) 10px var(--content-padding);
+   padding: 0 var(--content-padding) 0 var(--content-padding);
 
    background-color: var(--light-background-color);
 
@@ -138,7 +143,7 @@ blockquote p:last-child{
 }
 
 .header > *{
-   padding: 10px;
+   padding: 20px;
 }
 
 .header a{
@@ -166,17 +171,18 @@ blockquote p:last-child{
 
    padding: 10px var(--content-padding) 10px var(--content-padding);
 
-   color: var(--on-accent-color);
-   background-color: var(--accent-color);
+   background-color: var(--light-background-color);
+
+   box-shadow: var(--box-shadow-up);
 }
 
-.footer a{
-   color: var(--on-accent-color);
-
-   text-decoration: underline;
+.footer > *{
+   padding: 20px;
 }
 
 .footer .footer-right{
+   padding: 10px;
+
    text-align: right;
 }
 
@@ -196,7 +202,7 @@ blockquote p:last-child{
 }
 
 .heading > *{
-   padding: 10px;
+   padding: 10px 20px 10px 20px;
    margin: 0;
 
    background-color: transparent;

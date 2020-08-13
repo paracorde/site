@@ -1,8 +1,7 @@
 .cards{
    width: 40%;
 
-   margin: 0 var(--content-padding) 0 var(--content-padding);
-   padding: 10px;
+   margin: 10px var(--content-padding) 0 var(--content-padding);
 }
 
 .card-wrapper{
@@ -14,15 +13,18 @@
 
    width: 100%;
 
+   margin-bottom: 10px;
+
    padding: 10px;
    padding-right: 5%;
 
-   /* background-color: var(--background-color); */
+   background-color: var(--light-background-color);
 
    /* border-left: var(--accent-color) var(--border-property); */
    border-radius: var(--border-radius);
+   box-shadow: var(--box-shadow);
 
-   transform: translateX(-10px);
+   transition: var(--transition);
 }
 
 .card{
@@ -31,7 +33,7 @@
 
 .card-wrapper:hover .card, .card:focus{
    color: var(--darkened-accent-color);
-   background-color: var(--shaded-background-color);
+   /* background-color: var(--shaded-background-color); */
 
    text-decoration: none;
 

@@ -23,18 +23,16 @@
 
 {% block content %}
 <div class="wrapper">
-   <table><tr>
-      <td class="calendar"><div id="calendar"></div></td>
-      <td class="announcements"><div>
-         {% for id in AnnouncementSlice %}
-         <div class="announcement">
-            {% with announcement=AnnouncementMap|announcementkey:id %}
-            <div class="announcement-body">{{ announcement.Body|markdown }}</div>
-            <div class="announcement-timestamp">{{ announcement.Timestamp|markdown }}</div>
-            {% endwith %}
-         </div>
-         {% endfor %}
-      </div></td>
-   </table></tr>
+   <div class="calendar" id="calendar"></div>
+   <div class="announcements">
+      {% for id in AnnouncementSlice %}
+      <div class="announcement">
+         {% with announcement=AnnouncementMap|announcementkey:id %}
+         <div class="announcement-body">{{ announcement.Body|markdown }}</div>
+         <div class="announcement-timestamp">{{ announcement.Timestamp|markdown }}</div>
+         {% endwith %}
+      </div>
+      {% endfor %}
+   </div>
 </div>
 {% endblock %}

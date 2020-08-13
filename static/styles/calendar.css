@@ -1,24 +1,23 @@
 .content{
+   height: 80vh;
 }
 
 .wrapper{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   height: 100%;
    width: 100%;
 
    padding: 20px var(--content-padding) 20px var(--content-padding);
 }
 
 .calendar{
-   width: 60%;
-}
+   height: 100%;
+   width: 54%;
 
-.announcements{
-   width: 40%;
-
-   padding: 10px;
-}
-
-#calendar{
-   padding: 10px;
+   padding: 20px;
 
    background-color: var(--light-background-color);
 
@@ -26,63 +25,83 @@
    box-shadow: var(--box-shadow);
 }
 
-.calendar .fc .fc-daygrid-day.fc-day-today{
+.announcements{
+   position: relative;
+
+   height: 100%;
+   width: 42%;
+
+   padding: 10px;
+
+   background-color: var(--light-background-color);
+
+   border-radius: var(--border-radius);
+   box-shadow: var(--box-shadow);
+
+   overflow: auto;
+}
+
+.calendar.fc .fc-daygrid-day.fc-day-today{
    background-color: var(--shaded-background-color);
 }
 
-.calendar .fc .fc-daygrid-day{
+.calendar.fc .fc-daygrid-day{
    background-color: var(--light-background-color);
 }
 
-.calendar .fc .fc-col-header-cell{
+.calendar.fc .fc-col-header-cell{
    padding: 10px;
 
    background-color: var(--shaded-background-color);
 }
 
-.calendar .fc table, .calendar .fc td{
+.calendar.fc table, .calendar.fc td{
    border: none;
 }
 
-.calendar .fc a:hover{
+.calendar.fc a:hover{
    text-decoration: none;
 }
 
-.calendar .fc .fc-daygrid-event{
+.calendar.fc .fc-daygrid-event{
    background-color: var(--accent-color);
 
    border: none;
 }
 
-.calendar .fc .fc-daygrid-event:hover{
+.calendar.fc .fc-daygrid-event:hover{
    background-color: var(--darkened-accent-color);
 
    border: none;
 }
 
-.calendar .fc .fc-event-title{
+.calendar.fc .fc-event-title{
    display: block;
 
    text-align: center;
 }
 
 .announcement{
-   margin-top: 10px;
    padding: 10px;
 
-   background-color: var(--shaded-background-color);
+   /* background-color: var(--shaded-background-color); */
    /* background-color: var(--background-color); */
 
-   border-radius: var(--border-radius);
+   /* border-radius: var(--border-radius); */
+   border-bottom: var(--border-property) var(--darkened-background-color);
    /* box-shadow: inset var(--box-shadow); */
 }
 
-.announcement .announcement-body p:first-child{
+.announcement:last-child{
+   border: none;
+}
+
+.announcement .announcement-body > *:nth-child(1){
    margin-top: 0;
 }
 
-.announcement .announcement-body p{
-   margin: 4px 0 4px 0;
+.announcement .announcement-body > *{
+   margin: 10px 0 10px 0;
 }
 
 .announcement .announcement-timestamp p{
