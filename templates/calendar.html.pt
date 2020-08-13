@@ -1,0 +1,38 @@
+{% extends "base.html.pt" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="/static/styles/calendar.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.2.0/main.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@5.2.0/main.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@5.2.0/main.global.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@5.2.0/main.global.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@5.2.0/main.global.min.js"></script>
+<script>
+   onload_actions.push(function(){
+      var calendarEl = document.getElementById("calendar");
+      let calendar = new FullCalendar.Calendar(calendarEl, {
+         googleCalendarApiKey: "AIzaSyDALSSvprJ2x9297SkTvLfIMxgmn37Y3Gs",
+         events: {
+            googleCalendarId: "e9apm3mnb5cla7crlcvo1uffo4@group.calendar.google.com"
+         }
+      })
+      calendar.render();
+   });
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+   <div id="calendar"></div>
+   <div class="announcements">
+      {% for id in AnnouncementSlice %}
+      <div class="announcement">
+         {% with announcement=AnnouncementMap|announcementkey:id %}
+         <div class="announcement-body">{{ announcement.Body|markdown }}</div>
+         <div class="announcement-timestamp">{{ announcement.Timestamp|markdown }}</div>
+         {% endwith %}
+      </div>
+      {% endfor %}
+   </div>
+</div>
+{% endblock %}

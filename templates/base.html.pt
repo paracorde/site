@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="/static/styles/base.css">
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js"></script>
+      <script>
+         onload_actions = []
+         onload_actions.push(function(){
+            feather.replace();
+         });
+         onload_actions.push(function(){
+            var flashmessage = Cookies.get()["flash"];
+            if (flashmessage === "") return;
+            if (flashmessage === undefined) return;
+            var flash = document.getElementsByClassName("flash")[0];
+            flash.classList.add("flash-visible");
+            var message = document.getElementById("message");
+            message.innerHTML = flashmessage;
+            Cookies.remove("flash")
+         })
+      </script>
+      {% block head %}
+      {% endblock %}
+      <script>
+         window.onload = function(){
+            onload_actions.forEach(action => action());
+         }
+         function clearflash(){
+            var flash = document.getElementsByClassName("flash")[0];
+            flash.classList.remove("flash-visible");
+         }
+      </script>
+   </head>
+   <body>
+      <div class="page-wrapper">
+         <header class="header">
+            <div class="header-left">
+               <a class="logo" href="/">Logo</a>
+            </div>
+            <div class="header-right">
+               <a href="/calendar">Calendar</a>
+               <a href="/display-posts">Blog</a>
+            </div>
+         </header>
+         <div class="flash">
+            <button onclick="clearflash()" data-feather="x"></button>
+            <p id="message"></p>
+         </div>
+         <div class="content">
+            {% block content %}
+            This page doesn't exist.
+            {% endblock %}
+         </div>
+         <footer class="footer">
+            <div class="footer-left">
+               <address>
+                  Troop 453, San José CA<br>
+                  <a href="mailto:example@example.com">Contact us</a>
+               </address>
+            </div>
+            <div class="footer-right">
+            </div>
+         </footer>
+      </div>
+   </body>
+</html>

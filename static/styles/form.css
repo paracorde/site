@@ -1,0 +1,83 @@
+.form{
+   width: 100%;
+
+   padding: 20px var(--content-padding) 10px var(--content-padding);
+}
+
+.form input[type=text], .form input[type=password], .form textarea{
+   display: block;
+
+   width: 100%;
+
+   margin: 5px 0 10px 0;
+}
+
+.form .editor-toolbar{
+   border: none;
+
+   margin-top: 5px;
+
+   opacity: 1;
+   color: inherit;
+   background-color: var(--shaded-background-color);
+}
+
+.form .editor-toolbar:hover, .form .editor-toolbar:focus{
+   opacity: 1;
+}
+
+.form .editor-toolbar a{
+   margin-right: 3px;
+
+   color: inherit !important;
+
+   border: none;
+}
+
+.form .editor-toolbar a:hover{
+   color: var(--accent-color) !important;
+   background-color: var(--darkened-background-color);
+
+   border: none;
+}
+
+.form .editor-toolbar a.active{
+   color: var(--darkened-accent-color) !important;
+   background-color: var(--darkened-background-color);
+}
+
+.form .editor-toolbar.disabled-for-preview a:not(.no-disable){
+   color: var(--light-text-color) !important;
+   background-color: var(--shaded-background-color);
+}
+
+.form .editor-toolbar .separator{
+   border-left: 1px solid var(--mid-background-color);
+   border-right: none;
+}
+
+.form .CodeMirror{
+   padding: 10px;
+   border: none;
+
+   color: inherit;
+   background-color: var(--shaded-background-color);
+
+   cursor: text;
+}
+
+.form .CodeMirror:hover, .form .CodeMirror-focused{
+   background-color: var(--darkened-background-color);
+}
+
+.CodeMirror pre{
+   padding: 0 !important;
+}
+
+.form .editor-statusbar{
+   color: var(--light-text-color);
+}
+
+.form .editor-preview{
+   background-color: var(--shaded-background-color);
+}

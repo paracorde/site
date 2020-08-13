@@ -1,0 +1,33 @@
+{% extends "base.html.pt" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="/static/styles/card.css">
+{% endblock %}
+
+{% block content %}
+<div class="heading">
+   <div class="heading-title">Blog posts</div>
+   <div class="heading-details">
+      Written by scouts.
+   </div>
+</div>
+<div class="cards">
+{% for id in PostSlice %}
+   <div class="card-wrapper">
+   {% with post=PostMap|postkey:id %}
+      <a class="card" href="/posts/{{ id }}">
+         <div class="card-title">{{ post.Title|markdown }}</div>
+         <div class="card-author">by {{ post.Author }}</div>
+         <div class="card-timestamp">{{ post.TimestampShort|markdown }}</div>
+      </a>
+      {% if WebM %}
+      <div class="card-actions">
+         <a href="/edit/{{ id }}" class="card-action"><span data-feather="edit"></span></a>
+         <a href="/delete/{{ id }}" class="card-action"><span data-feather="trash"></span></a>
+      </div>
+      {% endif %}
+   {% endwith %}
+   </div>
+{% endfor %}
+</div>
+{% endblock %}

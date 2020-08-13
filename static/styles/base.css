@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+
+:root{
+   --text-color: #5d636e;
+   --light-text-color: #808896;
+
+   --accent-hue: 200;
+   --accent-color: hsl(var(--accent-hue), 60%, 65%);
+   --darkened-accent-color: hsl(var(--accent-hue), 60%, 45%);
+   --light-background-color: hsl(var(--accent-hue), 95%, 99%);
+   --background-color: hsl(var(--accent-hue), 45%, 97%);
+   --shaded-background-color: hsl(var(--accent-hue), 40%, 92%);
+   --darkened-background-color: hsl(var(--accent-hue), 40%, 89%);
+   --mid-background-color: hsl(var(--accent-hue), 10%, 80%);
+   --on-accent-color: var(--background-color);
+
+   --shadow-hue: 200;
+   --shadow-color: hsla(var(--shadow-hue), 15%, 10%, 20%);
+   --box-shadow: 0 2px 6px var(--shadow-color);
+
+   --border-color: var(--darkened-background-color);
+   --border-property: 3px solid;
+   --border-radius: 5px;
+
+   --padding: 10px;
+   --content-padding: 15%;
+
+   --transition: 0.25s ease;
+}
+
+*{
+   box-sizing: border-box;
+}
+
+body{
+   margin: 0;
+
+   color: var(--text-color);
+   background-color: var(--background-color);
+
+   font-family: 'Inter';
+   font-size: 0.9em;
+}
+
+.page-wrapper{
+   display: flex;
+   flex-direction: column;
+
+   height: 100vh;
+}
+
+.content{
+   flex: 1 0 auto;
+}
+
+a{
+   color: var(--accent-color);
+
+   text-decoration: none;
+}
+
+a:hover, a:focus{
+   color: var(--darkened-accent-color);
+
+   text-decoration: underline;
+}
+
+.text-input{
+   display: block;
+
+   padding: 10px;
+
+   border: 0;
+   border-radius: var(--border-radius);
+
+   color: inherit;
+   background-color: var(--shaded-background-color);
+
+   font-family: inherit;
+   font-size: inherit;
+}
+
+.text-input:hover, .text-input:focus{
+   background-color: var(--darkened-background-color);
+}
+
+textarea{
+   resize: none;
+}
+
+label{
+   padding: 10px;
+}
+
+.button{
+   padding: 10px;
+
+   border: 0;
+   border-radius: var(--border-radius);
+
+   color: var(--on-accent-color);
+   background-color: var(--accent-color);
+
+   font-family: inherit;
+   font-size: inherit;
+}
+
+.button:hover, .button:focus{
+   background-color: var(--darkened-accent-color);
+}
+
+blockquote{
+   margin-left: 0;
+   padding: 4px 4px 4px 10px;
+
+   border-left: var(--border-property) var(--accent-color);
+}
+
+blockquote p:first-child{
+   margin-top: 0;
+}
+
+blockquote p:last-child{
+   margin-bottom: 0;
+}
+
+.header{
+   display: flex;
+   justify-content: space-between;
+   align-items: baseline;
+   width: 100%;
+
+   padding: 10px var(--content-padding) 10px var(--content-padding);
+
+   background-color: var(--light-background-color);
+
+   box-shadow: var(--box-shadow);
+}
+
+.header > *{
+   padding: 10px;
+}
+
+.header a{
+   color: var(--light-text-color);
+
+   text-decoration: none;
+}
+
+.header a:hover, .header a:focus{
+   color: var(--accent-color);
+}
+
+.header .header-left a{
+   margin-right: 10px;
+}
+
+.header .header-right a{
+   margin-left: 10px;
+}
+
+.footer{
+   display: flex;
+   justify-content: space-between;
+   align-items: baseline;
+
+   padding: 10px var(--content-padding) 10px var(--content-padding);
+
+   color: var(--on-accent-color);
+   background-color: var(--accent-color);
+}
+
+.footer a{
+   color: var(--on-accent-color);
+
+   text-decoration: underline;
+}
+
+.footer .footer-right{
+   text-align: right;
+}
+
+.footer address{
+   display: block;
+
+   font-style: normal;
+}
+
+.heading{
+   width: 100%;
+
+   padding: 10px var(--content-padding) 10px var(--content-padding);
+
+   color: var(--on-accent-color);
+   background-color: var(--accent-color);
+}
+
+.heading > *{
+   padding: 10px;
+   margin: 0;
+
+   background-color: transparent;
+}
+
+.heading p{
+   margin: 0;
+   padding: 0;
+}
+
+.heading .heading-title{
+   font-size: 2.5em;
+   font-weight: 700;
+}
+
+img{
+   max-width: 100%;
+
+   border-radius: var(--border-radius);
+}
+
+button{
+   border: none;
+}
+
+.flash{
+   display: flex;
+   align-items: center;
+   position: fixed;
+   left: 25%;
+   bottom: 20px;
+
+   width: 50%;
+   padding: 10px;
+
+   background-color: var(--light-background-color);
+   opacity: 0%;
+
+   border-radius: var(--border-radius);
+   box-shadow: var(--box-shadow);
+
+   transform: translateY(200%);
+
+   transition: var(--transition);
+
+   z-index: 10;
+}
+
+.flash p{
+   margin: 0;
+}
+
+.flash svg{
+   width: 1em;
+   height: 1em;
+
+   margin-right: 10px;
+}
+
+.flash-visible{
+   opacity: 100%;
+
+   transform: translateY(0);
+}

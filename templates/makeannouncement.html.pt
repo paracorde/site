@@ -1,0 +1,23 @@
+{% extends "base.html.pt" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="/static/styles/form.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<script>
+   onload_actions.push(function(){
+      body = document.getElementById("body");
+      var simplemde = new SimpleMDE({element: body});
+   });
+</script>
+{% endblock %}
+
+{% block content %}
+<form class="form" action="/make-announcement" method="post">
+   <label for="body">Body</label>
+   <textarea name="body" class="text-input" id="body">{{ Body }}</textarea>
+   <label for="password">Password</label>
+   <input type="password" name="password" class="text-input">
+   <input type="submit" class="button" value="Push announcement">
+</form>
+{% endblock %}

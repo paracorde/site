@@ -1,0 +1,102 @@
+.cards{
+   width: 40%;
+
+   margin: 0 var(--content-padding) 0 var(--content-padding);
+   padding: 10px;
+}
+
+.card-wrapper{
+   position: relative;
+}
+
+.card{
+   display: block;
+
+   width: 100%;
+
+   padding: 10px;
+   padding-right: 5%;
+
+   /* background-color: var(--background-color); */
+
+   /* border-left: var(--accent-color) var(--border-property); */
+   border-radius: var(--border-radius);
+
+   transform: translateX(-10px);
+}
+
+.card{
+   text-decoration: none;
+}
+
+.card-wrapper:hover .card, .card:focus{
+   color: var(--darkened-accent-color);
+   background-color: var(--shaded-background-color);
+
+   text-decoration: none;
+
+   cursor: pointer;
+}
+
+.card p{
+   margin-top: 0;
+   margin-bottom: 0;
+}
+
+.card .card-title{
+   margin-bottom: 5px;
+   font-size: 1em;
+   font-weight: 500;
+}
+
+.card .card-author, .card .card-timestamp{
+   color: var(--light-text-color);
+
+   font-size: 0.8em;
+}
+
+.card-wrapper .card-actions{
+   position: absolute;
+   top: 0;
+   left: 0;
+
+   padding: 10px;
+
+   transform: translateX(-100%);
+}
+
+.card-wrapper .card-actions{
+   display: none;
+}
+
+.card-wrapper:hover .card-actions, .card-wrapper:focus .card-actions, .card-wrapper:active .card-actions{
+   display: block;
+}
+
+.card-wrapper .card-action{
+   display: block;
+
+   /* margin-bottom: 3px; */
+   padding: 3px;
+
+   color: var(--accent-color);
+
+   border-radius: var(--border-radius);
+}
+
+.card-wrapper .card-action:hover{
+   background-color: var(--darkened-background-color);
+}
+
+.card-wrapper .card-action > *{
+   display: block;
+
+   width: 1em;
+   height: 1em;
+
+   color: var(--light-text-color);
+}
+
+.card-wrapper .card-action:hover > *{
+   color: var(--accent-color);
+}

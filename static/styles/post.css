@@ -1,0 +1,17 @@
+.post{
+   width: 100%;
+}
+
+.post-timestamp{
+   font-size: 0.8em;
+}
+
+.post .post-body{
+   padding: 10px var(--content-padding) 10px var(--content-padding);
+
+   text-align: justify;
+}
+
+.post .post-body > *{
+   margin: 10px;
+}

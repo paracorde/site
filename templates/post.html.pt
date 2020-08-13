@@ -1,0 +1,20 @@
+{% extends "base.html.pt" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="/static/styles/post.css">
+{% endblock %}
+
+{% block content %}
+<div class="post">
+   <div class="heading">
+      <div class="heading-title">{{ Title|markdown }}</div>
+      <div class="heading-details">
+         <div class="post-author">{{ Author }}</div>
+         <div class="post-timestamp">{{ Timestamp|markdown }}</div>
+      </div>
+   </div>
+   <div class="post-body">
+      {{ Body|markdown }}
+   </div>
+</div>
+{% endblock %}
